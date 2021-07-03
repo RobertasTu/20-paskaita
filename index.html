@@ -45,7 +45,7 @@
         
         <button class='sudetis'>Sudetis</button>
         <button class='Atimtis'>Atimtis</button><br>
-        <button class='dalyba'>Dalyba</button>
+        <button class='dalyba'>Dalyba sveikas skaicius</button>
         <button class='daugyba'>Daugyba</button><br>
         <button class='dalyba'>Dalyba su liekana</button>
         <button class='kelLaipsniu'>Kelimas laipsniu</button><br>
@@ -171,7 +171,7 @@ document.querySelector('.dalyba').addEventListener('click', function() {
     a = parseFloat(document.querySelector('#pirmasSkaicius').value);
     b = parseFloat(document.querySelector('#antrasSkaicius').value);
 
-    dalyba = a / b;
+    dalyba = parseInt(a / b);
     console.log(a, b, dalyba);
     isvedimoElementas.value = dalyba;
 
