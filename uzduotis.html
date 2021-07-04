@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Skaiciuotuvas</title>
+    <style>
+        body {
+            width: 80%;
+            margin: auto;
+            font-size: 24px;
+            color: black;
+        }
+
+        .rezultatas {
+
+            padding-top: 25px;
+        }
+        .skaiciuotuvas {
+        padding-top: 25px;
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class='skaiciuotuvas'>
+
+        <h2>Skaiciuotuvas</h2>
+
+        <label for='pirmasSkaicius'>Iveskite pirma skaiciu:</label>
+        <input type='text' id='pirmasSkaicius' name='pirmasSkaicius' value='5'><br>
+        <label for='antrasSkaicius'>Iveskite antra skaiciu:</label>
+        <input type='text' id='antrasSkaicius' name='antrasSkaicius' value='8'><br>
+        
+        <button class='sudetis'>Sudetis</button>
+        <button class='Atimtis'>Atimtis</button><br>
+        <button class='dalyba'>Dalyba sveikas skaicius</button>
+        <button class='daugyba'>Daugyba</button><br>
+        <button class='dalyba'>Dalyba su liekana</button>
+        <button class='kelLaipsniu'>Kelimas laipsniu</button><br>
+        <button class='saknis'>Istraukti sakni</button>
+
+        <div class='skaicRez'>
+            <input type='text' id='rezSkaicius' name='rezskaicius' disabled='true'>
+
+        </div>
+
+    </div>
+
+    <script>
+    'use strict';
+
+
+
+     //Užduotis "Skaičiuotuvas"
+
+// Sukurti skaičiuotuvą. Skaičiuotuve įvedami du skaičiai į du skirtingus input.
+// Kiekvienas aritmetinis veiksmas atliekamas skirtingu mygtuko <button> paspaudimu.
+// Rezultatas išvedamas į div.
+document.querySelector('.sudetis').addEventListener('click', function() {
+    var a, b, c, sudetis, atimtis;
+    var isvedimoElementas = document.querySelector('#rezSkaicius');
+    a = parseFloat(document.querySelector('#pirmasSkaicius').value);
+    b = parseFloat(document.querySelector('#antrasSkaicius').value);
+
+    sudetis = a + b;
+    console.log(a, b, sudetis);
+    isvedimoElementas.value = sudetis;
+
+        
+});
+
+document.querySelector('.Atimtis').addEventListener('click', function() {
+    var a, b, c, atimtis;
+    var isvedimoElementas = document.querySelector('#rezSkaicius');
+    a = parseFloat(document.querySelector('#pirmasSkaicius').value);
+    b = parseFloat(document.querySelector('#antrasSkaicius').value);
+
+    atimtis = a - b;
+    console.log(a, b, atimtis);
+    isvedimoElementas.value = atimtis;
+
+        
+});
+
+
+document.querySelector('.dalyba').addEventListener('click', function() {
+    var a, b, c, dalyba;
+    var isvedimoElementas = document.querySelector('#rezSkaicius');
+    a = parseFloat(document.querySelector('#pirmasSkaicius').value);
+    b = parseFloat(document.querySelector('#antrasSkaicius').value);
+
+    dalyba = parseInt(a / b);
+    console.log(a, b, dalyba);
+    isvedimoElementas.value = dalyba;
+
+        
+});
+
+document.querySelector('.daugyba').addEventListener('click', function() {
+    var a, b, c, daugyba;
+    var isvedimoElementas = document.querySelector('#rezSkaicius');
+    a = parseFloat(document.querySelector('#pirmasSkaicius').value);
+    b = parseFloat(document.querySelector('#antrasSkaicius').value);
+
+    daugyba = a * b;
+    console.log(a, b, daugyba);
+    isvedimoElementas.value = daugyba;
+
+        
+});
+
+
+    </script>
+    
+</body>
+</html>
