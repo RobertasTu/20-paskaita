@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class='langeliai'>
+        <h2>Didesnio skaičiaus suradimas</h2>
+        <label for='pirmasSkaicius'>Iveskite pirma skaiciu a:</label>
+        <input type='text' id='pirmasSkaicius' name='pirmasSkaicius' value='5'><br>
+        <label for='antrasSkaicius'>Iveskite antra skaiciu b:</label>
+        <input type='text' id='antrasSkaicius' name='antrasSkaicius' value='8'><br>
+        <label for='treciasSkaicius'>Iveskite trecia skaiciu c:</label>
+        <input type='text' id='treciasSkaicius' name='antrasSkaicius' value='9'><br>
+
+
+
+        <button class='rezultatas'>Skaiciuoti</button>
+
+        <div class='Rez'>
+            Didesnis skaicius :<input type='text' id='rez' name='rez' disabled='true'>
+
+        </div>
+    </div>
+
+
+    <script>
+        'use strict'
+
+        //1. Suprogramuokite skriptą, kuris rastų didžiausią skaičių iš dviejų aprašytų.
+//Papildomai:
+//*Abu skaičiai yra paimami iš dviejų skirtingų input laukelių.
+// *Rezultatas išvedamas neaktyviame(disabled) input laukelyje.
+//2. Suprogramuokite skriptą, kuris rastų didžiausią skaičių iš trijų aprašytų.
+// Papildomai:
+// *Visi skaičiai yra paimami iš skirtingų input laukelių.
+// *Rezultatas išvedamas neaktyviame(disabled) input laukelyje.
+//3. Patikrinkite, ar iš trijų įvestų trikampio kraštinių galima sudaryti trikampį.
+//4. Papildykite 3 užduotį:
+  // *Patikrinkite, ar trikampis yra lygiakraštis, lygiašonis ar įvairiakraštis
+   //*Patikrinkite, ar trikampis yra statusis, bukasis ar smailusis.
+//5. Sukurkite skaičiuotuvą, sudedantį dvi trupmenas. Rezultatas atvaizduojamas su sveikąja ir trupmenine dalimi.
+document.querySelector('.rezultatas').addEventListener('click', function() {
+    var a, b, c;
+    var isvedimoElementas = document.querySelector('#rez');
+    a = parseFloat(document.querySelector('#pirmasSkaicius').value);
+    b = parseFloat(document.querySelector('#antrasSkaicius').value);
+    c = parseFloat(document.querySelector('#treciasSkaicius').value);
+
+    if (a > b && a > c) { 
+        console.log(a, b, c, "a skaicius yra didžiausias")
+        isvedimoElementas.value = a;
+    } else if (a < b && b > c) {
+        console.log(a, b, c, "b skaicius yra didžiausias")
+        isvedimoElementas.value = b;
+    } else if (c > a && c > b) {
+        console.log(a, b, c, "c skaicius yra didžiausias")
+        isvedimoElementas.value = c;
+    } else if ( a == b && b > c) {
+        console.log(a, b, c, "a ir b skaiciai yra lygus ir didesni uz c")
+        isvedimoElementas.value = a + ' a = b, ir yra didesni uz c';
+
+    } else if ( b == c && b > a) {
+        console.log(a, b, c, "b ir c skaiciai yra lygus ir didesni uz a")
+        isvedimoElementas.value = b + ' b = c, ir yra didesni uz a';
+    } else if ( a==c && c > b){
+        console.log(a, b, c, "a ir c skaiciai yra lygus ir didesni uz b")
+        isvedimoElementas.value = b + ' a = c, yra didesni uz b';
+    }
+    else if (a == b && a == c) {
+        console.log(a, b, c, "Skaiciai yra lygus")
+        isvedimoElementas.value = a + ' Įvesti skaičiai yra lygūs';
+    } else {
+        console.log (a, b, c, 'patikrinkite ar ivesti skaiciai a b c langeliuose')
+        isvedimoElementas.value = 'Iveskite skaitines reikšmes visuose lengeliuose';
+    }
+});
+
+    </script>
+    
+</body>
+</html>

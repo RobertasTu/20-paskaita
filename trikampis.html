@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trikampis</title>
+</head>
+<body>
+
+    <div class='langeliai'>
+        <h2>Trikampio skaiciavimas</h2>
+        <label for='pirmasSkaicius'>Iveskite krastine a:</label>
+        <input type='text' id='pirmasSkaicius' name='pirmasSkaicius' value='3'><br>
+        <label for='antrasSkaicius'>Iveskite krastine b:</label>
+        <input type='text' id='antrasSkaicius' name='antrasSkaicius' value='4'><br>
+        <label for='treciasSkaicius'>Iveskite krastine c:</label>
+        <input type='text' id='treciasSkaicius' name='antrasSkaicius' value='5'><br>
+
+
+
+        <button class='rezultatas'>Tikrinti</button>
+
+        <div class='Rez'>
+            Rezultatas :<input type='text' id='rez' name='rez' disabled='true'>
+
+        </div>
+    </div>
+  
+    
+
+    <script>
+        'use strict'
+
+        //3. Patikrinkite, ar iš trijų įvestų trikampio kraštinių galima sudaryti trikampį.
+//4. Papildykite 3 užduotį:
+  // *Patikrinkite, ar trikampis yra lygiakraštis, lygiašonis ar įvairiakraštis
+   //*Patikrinkite, ar trikampis yra statusis, bukasis ar smailusis.
+   document.querySelector('.rezultatas').addEventListener('click', function() {
+    var a, b, c;
+    var isvedimoElementas = document.querySelector('#rez');
+    a = parseFloat(document.querySelector('#pirmasSkaicius').value);
+    b = parseFloat(document.querySelector('#antrasSkaicius').value);
+    c = parseFloat(document.querySelector('#treciasSkaicius').value);  
+    var trikampis = [a,b,c];
+    // a < b+c 
+    // b < a+c 
+    // c < b+a
+
+if ((a < b + c) && (b < a + c) && ( c < b + a)) {
+    // console.log(a, b, c, "Trikampi sudaryti galim")
+        // isvedimoElementas.value = 'Trikampis';
+if ( a != b && b != c && c!= a) {
+    console.log(a, b, c, 'Trikampi sudaryti galima - Ivairiakrastis')
+    isvedimoElementas.value = 'Trikampis - Ivairiakrastis';
+} else if (a == b && b == c && c == a) {
+    console.log(a, b, c, 'Trikampi sudaryti galima - lygiakrastis')
+    isvedimoElementas.value = 'Trikampis - lygiakrastis';
+} else {
+    console.log(a, b, c, ' Trikampis lygiasonis')
+    isvedimoElementas.value = 'Trikampis - lygiasonis';
+}
+
+        //pagal kampa
+        //statusis a2 + b2 = c2
+        //  bukasis a2 + b2 < c2
+        // smailusis a2 + b2 > c2
+ if( (a*a)+(b*b) == (c*c) || (c*c + b*b == a*a) || (c*c + a*a == b*b)) {
+  console.log(a, b, c, "Trikampis yra statusis");
+ } else if((a*a)+(b*b) < (c*c) || (c*c)+(b*b) < (a*a) || (a*a)+(c*c) < (b*b)) {
+   console.log(a, b, c, "Trikampis yra bukasis");
+  } 
+   else {
+   console.log("Trikampis yra smailusis");
+   }
+
+
+} else {
+        console.log(a, b, c, "Trikampio sudaryti negalim")
+        isvedimoElementas.value = 'Trikampio sudaryti negalima';
+}
+
+
+
+
+
+   });
+
+
+    </script>
+</body>
+</html>
