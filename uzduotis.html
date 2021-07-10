@@ -39,7 +39,7 @@
         <button class='Atimtis'>Atimtis</button><br>
         <button class='dalyba'>Dalyba sveikas skaicius</button>
         <button class='daugyba'>Daugyba</button><br>
-        <button class='dalyba'>Dalyba su liekana</button>
+        <button class='dalybaLiekana'>Dalybos liekana</button>
         <button class='kelLaipsniu'>Kelimas laipsniu</button><br>
         <button class='saknis'>Istraukti sakni</button>
 
@@ -109,6 +109,45 @@ document.querySelector('.daugyba').addEventListener('click', function() {
     daugyba = a * b;
     console.log(a, b, daugyba);
     isvedimoElementas.value = daugyba;
+
+        
+});
+
+document.querySelector('.dalybaLiekana').addEventListener('click', function() {
+    var a, b, c, dalybaLiekana;
+    var isvedimoElementas = document.querySelector('#rezSkaicius');
+    a = parseFloat(document.querySelector('#pirmasSkaicius').value);
+    b = parseFloat(document.querySelector('#antrasSkaicius').value);
+
+    dalybaLiekana = a % b;
+    console.log(a, b, dalybaLiekana);
+    isvedimoElementas.value = dalybaLiekana;
+
+        
+});
+
+document.querySelector('.kelLaipsniu').addEventListener('click', function() {
+    var a, b, c, kelLaipsniu;
+    var isvedimoElementas = document.querySelector('#rezSkaicius');
+    a = parseFloat(document.querySelector('#pirmasSkaicius').value);
+    b = parseFloat(document.querySelector('#antrasSkaicius').value);
+
+    kelLaipsniu = a ** b;
+    console.log(a, b, kelLaipsniu);
+    isvedimoElementas.value = kelLaipsniu;
+
+        
+});
+
+document.querySelector('.saknis').addEventListener('click', function() {
+    var a, b, c, saknis;
+    var isvedimoElementas = document.querySelector('#rezSkaicius');
+    a = parseFloat(document.querySelector('#pirmasSkaicius').value);
+    b = parseFloat(document.querySelector('#antrasSkaicius').value);
+
+    saknis = a ** (1 / b);
+    console.log(a, b, saknis);
+    isvedimoElementas.value = saknis;
 
         
 });
